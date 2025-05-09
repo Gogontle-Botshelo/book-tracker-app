@@ -1,38 +1,58 @@
-# sv
+# Book Tracker App
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Purpose
+The Book Tracker App is a web application built for the Web Programming II project to help users manage their reading lists. Users can add books, search for books using the Google Books API, and filter books by reading status (Read, Reading, Want to Read). The app uses SvelteKit for a responsive UI, SQLite for data storage, and Drizzle ORM for database management.
 
-## Creating a project
+## Implementation
+- **Framework**: SvelteKit for server-side rendering and routing.
+- **Database**: SQLite with Drizzle ORM for storing book data (title, author, status, added date).
+- **External API**: Google Books API for searching books.
+- **Validation**: Zod and SvelteKit Superforms for form validation.
+- **Date Formatting**: `date-fns` for formatting added dates.
+- **Components**: Eight Svelte components for modular UI.
+- **API Calls**: Four API calls (CRUD operations and search).
+- **Styling**: SCSS for a clean, responsive design.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Codebase Structure
+- `src/lib/components/`: Eight Svelte components (`BookCard`, `BookList`, `SearchBar`, `AddBookForm`, `Navbar`, `Footer`, `StatusFilter`, `LoadingSpinner`).
+- `src/lib/db/`: Database setup (`schema.js`, `index.js`).
+- `src/routes/`: Three routes (`/`, `/search`, `/add`) and an API route (`/api/search`).
+- `drizzle/`: Migration files for SQLite.
+- `drizzle.config.js`: Drizzle ORM configuration.
+- `sqlite.db`: SQLite database file.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## APIs
+- **Google Books API**: Fetches b- **Google Books API**: Fetches b- **Google Books API**: Fetche **Internal APIs**:
+  - `POST /add`: Adds a book to the database.
+  - `GET /`: Retrieves books for the home page.
+  - `GET /api/search`: Proxies Google Books API.
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Stored Data
+- **Books Table**:
+  - `id`: Integer, auto-incrementing primary key.
+  - `title`: Text, book title (required).
+  - `author`: Text, book author (required).
+  - `status`: Text, enum (read, reading, want_to_read).
+  - `addedDate`: Text, date added (formatted with `date-fns`).
 
-## Developing
+## Compon## Compon## Compon#cation
+- **Components**:
+  - `Navbar`: Navigation links to routes.
+  - `Footer`: Static footer with project info.
+  - `BookCard`: Displays individual book detai  - `BookCard`: Displays individual book detai  - `BookCnts.
+  - `SearchBar`: Input for Google Books API search.
+  - `AddBookForm`: Form for adding   - `AddBookForm`: Form for adding   -er`: Dropdown to filter books by status.
+  - `LoadingS  - `LoadingS  - `LoadingS  - `.
+- **Services**:
+  - Database operations via `src/lib/db/index.js`.
+  - API calls via SvelteKit server routes.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## External Module## External Module## External Module## ate` in `src/routes/add/+page.server.js` (e.g., `yyyy-MM-dd`).
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Setup Instructions
+1. Clone the repository: `git clone git@github.com:Gogontle/book-tracker-app.git`
+2. Install dependencies: `npm install`
+3. Generate migrations: `npx drizzle-kit generate`
+4. Apply migrations: `npm run migrate`
+5. Run the development server: `npm run dev`
+6. Open `http://localhost:5173` in your browser. 

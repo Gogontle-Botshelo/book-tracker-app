@@ -1,1 +1,6 @@
-node_modules\n.env\n.svelte-kit\nbuild
+node_modules
+.env
+.svelte-kit
+build
+sqlite.db
+.idea
