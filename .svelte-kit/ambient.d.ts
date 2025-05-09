@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const GOOGLE_BOOKS_API_KEY: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
 	export const SHELL: string;
@@ -107,6 +108,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		GOOGLE_BOOKS_API_KEY: string;
 		NODE: string;
 		INIT_CWD: string;
 		SHELL: string;

@@ -4,10 +4,10 @@
 
 <style lang="scss">
   .footer {
-    background-color: #333;
+    background-color: #817158;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 0.5rem;
     position: fixed;
     bottom: 0;
     width: 100%;

@@ -12,32 +12,28 @@
 	}
 </script>
 
-<form on:submit|preventDefault={search}>
+<form on:submit|preventDefault={search} class="search-form fade-in">
 	<input type="text" bind:value={query} placeholder="Search for books..." />
 	<button type="submit">Search</button>
 </form>
 
 <style>
-    form {
+    .search-form {
         display: flex;
-        gap: 0.5rem;
-        margin: 1rem 0;
+        gap: 0.75rem;
+        margin: 2rem auto;
+        max-width: 500px;
+        background: var(--secondary);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     input {
-        padding: 0.5rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
         flex: 1;
+        border: 1px solid var(--accent);
     }
     button {
-        padding: 0.5rem 1rem;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #0056b3;
+        background-color: var(--primary);
+        font-family: 'Dancing Script', cursive;
     }
 </style>
