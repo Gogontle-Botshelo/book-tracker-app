@@ -1,14 +1,16 @@
 <script>
+	import SearchBar from '$lib/components/SearchBar.svelte';
+	import BookList from '$lib/components/BookList.svelte';
+
 	export let data;
 </script>
 
-<h1>Book Tracker</h1>
+<h1>Search Books</h1>
+<SearchBar />
 {#if data.error}
-	<p style="color: red;">{data.error}</p>
-{:else if data.books.length}
-	{#each data.books as book}
-		<div>{book.title} by {book.author} ({book.status})</div>
-	{/each}
+	<p style="color: red;">Error: {data.error}</p>
+{:else if data.books?.length}
+	<BookList books={data.books} />
 {:else}
-	<p>No books added yet.</p>
+	<p>No results found.</p>
 {/if}

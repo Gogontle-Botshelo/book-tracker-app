@@ -7,7 +7,9 @@
 
 <h1>Search Books</h1>
 <SearchBar />
-{#if data.books?.length}
+{#if data.error}
+	<p style="color: red;">Error: {data.error}</p>
+{:else if data.books?.length}
 	<BookList books={data.books} />
 {:else}
 	<p>No results found.</p>

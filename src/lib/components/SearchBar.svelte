@@ -1,26 +1,43 @@
 <script>
-	export let value = '';
-	export let onSearch;
+	import { goto } from '$app/navigation';
+	let query = '';
+
+	async function search() {
+		if (query.trim()) {
+			console.log('Submitting search:', query);
+			await goto(`/search?q=${encodeURIComponent(query)}`);
+		} else {
+			console.log('Empty query');
+		}
+	}
 </script>
 
-<div class="search-bar">
-	<input
-		type="text"
-		bind:value
-		placeholder="Search books..."
-		on:input={() => onSearch(value)}
-	/>
-</div>
+<form on:submit|preventDefault={search}>
+	<input type="text" bind:value={query} placeholder="Search for books..." />
+	<button type="submit">Search</button>
+</form>
 
-<style lang="scss">
-  .search-bar {
-    padding: 1rem;
-  }
-  input {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+<style>
+    form {
+        display: flex;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    input {
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        flex: 1;
+    }
+    button {
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
 </style>
