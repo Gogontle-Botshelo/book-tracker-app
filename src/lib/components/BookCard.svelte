@@ -3,17 +3,24 @@
 	import { invalidateAll } from '$app/navigation';
 
 	async function deleteBook() {
+		if (!book.id) {
+			alert('Error: Book ID is missing');
+			return;
+		}
 		if (confirm(`Are you sure you want to delete "${book.title}"?`)) {
 			try {
+				console.log('Deleting book with ID:', book.id);
 				const response = await fetch(`/api/delete/${book.id}`, {
 					method: 'POST'
 				});
 				if (!response.ok) {
-					throw new Error('Failed to delete book');
+					const errorData = await response.json();
+					throw new Error(errorData.error || 'Failed to delete book');
 				}
-				await invalidateAll(); // Refresh the page
+				await invalidateAll();
 			} catch (error) {
-				alert('Error deleting book: ' + error.message);
+				console.error('Delete error:', error);
+				alert(`Error deleting book: ${error.message}`);
 			}
 		}
 	}
