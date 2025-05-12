@@ -1,12 +1,12 @@
 {
-  "version": "7",
+  "version": "5",
   "dialect": "sqlite",
   "entries": [
     {
       "idx": 0,
       "version": "6",
-      "when": 1746786513912,
-      "tag": "0000_bumpy_timeslip",
+      "when": 1746999051710,
+      "tag": "0000_daily_proteus",
       "breakpoints": true
     }
   ]

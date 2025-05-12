@@ -13,7 +13,7 @@ export const server_loads = [];
 export const dictionary = {
 		"/": [~2],
 		"/add": [~3],
-		"/search": [4]
+		"/search": [~4]
 	};
 
 export const hooks = {
@@ -29,4 +29,4 @@ export const hash = false;
 
 export const decode = (type, value) => decoders[type](value);
 
-export { default as root } from '../root.js';
+export { default as root } from '../root.svelte';

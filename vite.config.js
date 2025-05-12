@@ -1,11 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
 
-export default defineConfig({
+export default {
 	plugins: [sveltekit()],
 	server: {
-		fs: {
-			allow: ['static']
-		}
-	}
-});
+		hmr: {
+			overlay: false, // Disable the overlay for warnings
+		},
+	},
+};

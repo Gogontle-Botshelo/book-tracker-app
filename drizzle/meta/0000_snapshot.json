@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "805ce34e-ce4c-4236-8316-d032529e6dbe",
+  "id": "2d31c1e8-cb19-428b-8b59-b66e3d647817",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "books": {
@@ -12,7 +12,7 @@
           "type": "integer",
           "primaryKey": true,
           "notNull": true,
-          "autoincrement": true
+          "autoincrement": false
         },
         "title": {
           "name": "title",
@@ -35,12 +35,13 @@
           "notNull": true,
           "autoincrement": false
         },
-        "addedDate": {
-          "name": "addedDate",
+        "added_date": {
+          "name": "added_date",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": "'2025-05-11T21:30:51.706Z'"
         }
       },
       "indexes": {},

@@ -1,30 +1,19 @@
 <script>
-	import BookCard from '$lib/components/BookCard.svelte';
-
 	export let books;
 </script>
 
-{#if books?.length}
-	<div class="book-list">
-		{#each books as book (book.id || book.googleBooksId)}
-			<BookCard book={book} />
-		{/each}
-	</div>
-{:else}
-	<p class="no-books">No books to display.</p>
-{/if}
+<ul>
+	{#each books as book}
+		<li>{book.title} by {book.author} - {book.status}</li>
+	{/each}
+</ul>
 
 <style>
-    .book-list {
-        display: grid;
-        gap: 1.5rem;
-        margin: 2rem 0;
+    ul {
+        list-style: none;
+        padding: 0;
     }
-    .no-books {
-        font-family: 'Raleway', sans-serif;
-        font-size: 1rem;
-        color: var(--dark);
-        text-align: center;
-        margin: 2rem 0;
+    li {
+        margin: 5px 0;
     }
 </style>

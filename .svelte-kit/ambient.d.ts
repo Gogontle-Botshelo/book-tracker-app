@@ -27,20 +27,19 @@
  */
 declare module '$env/static/private' {
 	export const GOOGLE_BOOKS_API_KEY: string;
-	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
-	export const TERM: string;
 	export const SHELL: string;
+	export const TERM: string;
 	export const TMPDIR: string;
 	export const npm_config_global_prefix: string;
 	export const CONDA_SHLVL: string;
-	export const TERM_PROGRAM_VERSION: string;
 	export const COLOR: string;
 	export const TERM_SESSION_ID: string;
 	export const npm_config_noproxy: string;
 	export const npm_config_local_prefix: string;
 	export const USER: string;
+	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
 	export const CONDA_EXE: string;
 	export const SSH_AUTH_SOCK: string;
@@ -48,6 +47,7 @@ declare module '$env/static/private' {
 	export const npm_execpath: string;
 	export const _CE_CONDA: string;
 	export const PATH: string;
+	export const TERMINAL_EMULATOR: string;
 	export const npm_package_json: string;
 	export const npm_config_engine_strict: string;
 	export const _: string;
@@ -109,20 +109,19 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		GOOGLE_BOOKS_API_KEY: string;
-		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
-		TERM: string;
 		SHELL: string;
+		TERM: string;
 		TMPDIR: string;
 		npm_config_global_prefix: string;
 		CONDA_SHLVL: string;
-		TERM_PROGRAM_VERSION: string;
 		COLOR: string;
 		TERM_SESSION_ID: string;
 		npm_config_noproxy: string;
 		npm_config_local_prefix: string;
 		USER: string;
+		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
 		CONDA_EXE: string;
 		SSH_AUTH_SOCK: string;
@@ -130,6 +129,7 @@ declare module '$env/dynamic/private' {
 		npm_execpath: string;
 		_CE_CONDA: string;
 		PATH: string;
+		TERMINAL_EMULATOR: string;
 		npm_package_json: string;
 		npm_config_engine_strict: string;
 		_: string;

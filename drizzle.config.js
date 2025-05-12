@@ -1,10 +1,8 @@
-import { defineConfig } from 'drizzle-kit';
-
-export default defineConfig({
-	schema: './src/lib/db/schema.js',
+module.exports = {
+	schema: './src/lib/schema.js',
 	out: './drizzle',
-	dialect: 'sqlite',
+	dialect: 'turso', //
 	dbCredentials: {
-		url: './sqlite.db'
-	}
-});
+		url: 'file:./turso.db', //
+	},
+};

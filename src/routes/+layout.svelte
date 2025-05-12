@@ -1,9 +1,15 @@
 <script>
-	import Navbar from '$lib/components/Navbar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import '../app.scss';
+	import './app.css'; //
 </script>
 
-<Navbar />
-<slot />
-<Footer></Footer>
+<div class="app">
+	<slot />
+</div>
+
+<style>
+    .app {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+</style>

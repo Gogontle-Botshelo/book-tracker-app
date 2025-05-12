@@ -1,0 +1,15 @@
+// vite.config.js
+import { sveltekit } from "file:///Users/gogontlebotshelo/Desktop/book-tracker-app/node_modules/@sveltejs/kit/src/exports/vite/index.js";
+var vite_config_default = {
+  plugins: [sveltekit()],
+  server: {
+    hmr: {
+      overlay: false
+      // Disable the overlay for warnings
+    }
+  }
+};
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvVXNlcnMvZ29nb250bGVib3RzaGVsby9EZXNrdG9wL2Jvb2stdHJhY2tlci1hcHBcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIi9Vc2Vycy9nb2dvbnRsZWJvdHNoZWxvL0Rlc2t0b3AvYm9vay10cmFja2VyLWFwcC92aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vVXNlcnMvZ29nb250bGVib3RzaGVsby9EZXNrdG9wL2Jvb2stdHJhY2tlci1hcHAvdml0ZS5jb25maWcuanNcIjtpbXBvcnQgeyBzdmVsdGVraXQgfSBmcm9tICdAc3ZlbHRlanMva2l0L3ZpdGUnO1xuXG5leHBvcnQgZGVmYXVsdCB7XG5cdHBsdWdpbnM6IFtzdmVsdGVraXQoKV0sXG5cdHNlcnZlcjoge1xuXHRcdGhtcjoge1xuXHRcdFx0b3ZlcmxheTogZmFsc2UsIC8vIERpc2FibGUgdGhlIG92ZXJsYXkgZm9yIHdhcm5pbmdzXG5cdFx0fSxcblx0fSxcbn07Il0sCiAgIm1hcHBpbmdzIjogIjtBQUFrVSxTQUFTLGlCQUFpQjtBQUU1VixJQUFPLHNCQUFRO0FBQUEsRUFDZCxTQUFTLENBQUMsVUFBVSxDQUFDO0FBQUEsRUFDckIsUUFBUTtBQUFBLElBQ1AsS0FBSztBQUFBLE1BQ0osU0FBUztBQUFBO0FBQUEsSUFDVjtBQUFBLEVBQ0Q7QUFDRDsiLAogICJuYW1lcyI6IFtdCn0K
