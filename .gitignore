@@ -1,0 +1,11 @@
+# WebStorm IDE settings
+.idea/
+
+# Node.js dependencies
+node_modules/
+
+# SvelteKit build artifacts
+.svelte-kit/
+
+# SQLite database file
+database.sqlite
