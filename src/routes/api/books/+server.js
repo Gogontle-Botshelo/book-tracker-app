@@ -36,7 +36,8 @@ export async function GET({ url }) {
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
-    const db = (await import('$lib/db')).default;
+    const dbModule = await import('$lib/db');
+    const db = await dbModule.init();
     const { title, author, status, date_added } = await request.json();
     console.log('Adding book:', { title, author, status, date_added });
     try {
