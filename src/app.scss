@@ -2,112 +2,205 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #FAF0E6; /* Light nude background */
+  color: #4A4A4A; /* Darker gray text for readability */
+  line-height: 1.6;
+  /* Flexbox to keep footer at bottom */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  flex: 1; /* Grow to push footer down */
 }
 
 .header {
-  background-color: #333;
-  color: white;
-  padding: 10px;
+  background-color: #DEB887; /* Warm tan for header */
+  color: #4A4A4A;
+  padding: 15px;
   text-align: center;
+  position: relative;
+}
+
+/* Decorative divider below header */
+.header::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #6D5D4B; /* Darker taupe for contrast */
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header a {
-  color: white;
-  margin: 0 15px;
+  color: #4A4A4A;
+  margin: 0 20px;
   text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.header a:hover {
+  color: #FF9999; /* Soft coral on hover */
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #4A4A4A;
+  text-align: center;
 }
 
 .book-card {
-  background: white;
-  border: 1px solid #ddd;
+  background: #FFFFFF; /* White card background */
+  border: 1px solid #E5E5E5; /* Light gray border */
   padding: 15px;
-  margin: 10px 0;
+  margin: 15px 0;
   border-radius: 5px;
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
+  animation: fadeIn 0.5s ease forwards;
 }
 
-.book-card[type="button"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: white;
-  border: none;
-  font: inherit;
+.book-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #4A4A4A;
 }
 
-.book-card:hover, .book-card:focus {
-  background: #f8f8f8;
-  outline: 2px solid #333;
+.book-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #7A7A7A; /* Lighter gray for secondary text */
 }
 
 .book-card button.delete {
-  background-color: #d32f2f;
+  background-color: #FF9999; /* Soft coral for delete button */
   color: white;
   border: none;
   padding: 8px 12px;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
 }
 
 .book-card button.delete:hover {
-  background-color: #b71c1c;
+  background-color: #FF6666; /* Darker coral on hover */
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 500px;
-  margin: 20px 0;
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
 }
 
 input, select, button {
   padding: 10px;
-  font-size: 16px;
+  font-size: 1rem;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
 }
 
 button {
-  background-color: #333;
+  background-color: #FF9999; /* Soft coral for buttons */
   color: white;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #FF6666; /* Darker coral on hover */
 }
 
 .footer {
   text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 15px;
+  background-color: #DEB887;
+  color: #4A4A4A;
+  margin-top: 30px;
+  position: relative;
+}
+
+/* Decorative divider above footer */
+.footer::before {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px; /* Increased thickness */
+  background-color: #6D5D4B; /* Darker taupe for better contrast */
+  position: absolute;
+  top: -20px; /* Adjusted position */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #333;
+  border: 4px solid #E5E5E5;
+  border-top: 4px solid #FF9999;
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  animation: spin 1s linear infinite;
   margin: 20px auto;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .book-card {
+    margin: 10px 0;
+    padding: 12px;
+  }
+
+  form {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .header a {
+    margin: 0 10px;
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .book-card p {
+    font-size: 0.9rem;
+  }
+
+  input, select, button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }
