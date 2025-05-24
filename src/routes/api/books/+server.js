@@ -4,6 +4,7 @@ import axios from 'axios';
  * @typedef {Object} OpenLibraryDoc
  * @property {string} title
  * @property {string[]} [author_name]
+ * @property {number} [first_publish_year]
  */
 
 /**
@@ -26,7 +27,8 @@ export async function GET({ url }) {
         }
         const books = data.docs.slice(0, 5).map(doc => ({
             title: doc.title || 'Unknown Title',
-            author: Array.isArray(doc.author_name) && doc.author_name.length > 0 ? doc.author_name[0] : 'Unknown'
+            author: Array.isArray(doc.author_name) && doc.author_name.length > 0 ? doc.author_name[0] : 'Unknown',
+            releaseDate: doc.first_publish_year || 'Unknown' // Add release date
         }));
         return new Response(JSON.stringify(books), { status: 200 });
     } catch (error) {
@@ -37,7 +39,7 @@ export async function GET({ url }) {
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
     const dbModule = await import('$lib/db');
-    const db = dbModule.default; // Use default export directly
+    const db = dbModule.default;
     const { title, author, status, date_added } = await request.json();
     console.log('Adding book:', { title, author, status, date_added });
     try {
