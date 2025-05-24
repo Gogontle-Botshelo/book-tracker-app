@@ -9,7 +9,6 @@
     let loading = false;
     let error = null;
 
-    // Update filteredBooks when data.books changes
     $: filteredBooks = Array.isArray(data.books) ? data.books.filter(book => book != null) : [];
 
     function handleFilter(status) {
@@ -26,7 +25,6 @@
         }
         setTimeout(() => (loading = false), 500);
     }
-
 </script>
 
 <Header />

@@ -1,15 +1,18 @@
 <script>
-    export let book;
+    export let selectedBook;
     export let onSubmit;
-    let title = book?.title || '';
-    let author = book?.author || '';
-    let status = book?.status || 'Want to Read';
+    let status = 'Want to Read';
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        onSubmit({ ...selectedBook, status });
+    }
 </script>
 
-<form on:submit|preventDefault={() => onSubmit({ title, author, status })}>
-    <input type="text" bind:value={title} placeholder="Book Title" required />
-    <input type="text" bind:value={author} placeholder="Author" />
-    <select bind:value={status}>
+<form on:submit={handleSubmit}>
+    <p>Selected Book: {selectedBook.title} by {selectedBook.author}</p>
+    <label for="status">Status:</label>
+    <select id="status" bind:value={status}>
         <option value="Read">Read</option>
         <option value="Reading">Reading</option>
         <option value="Want to Read">Want to Read</option>

@@ -7,7 +7,7 @@
 <div class="container home-container">
     <h1>Welcome to Book Tracker</h1>
     <p class="intro-text">
-        Keep track of your reading journey! Search for books to add to your collection, mark them as read, reading, or to-read, and manage your list with ease.
+        Keep track of your reading journey! Search for books to add to your collection, mark them as read, reading or want to read and manage your list with ease.
     </p>
     <div class="cta-buttons">
         <a href="/add" class="cta-button">Add a Book</a>
@@ -24,14 +24,14 @@
 
     h1 {
         font-size: 2rem;
-        color: #4A4A4A;
+        color: rgb(129, 113, 88);
         margin-bottom: 15px;
     }
 
     .intro-text {
         font-size: 1.1rem;
         margin-bottom: 20px;
-        color: #7A7A7A;
+        color: rgb(76, 52, 20);
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
@@ -44,7 +44,7 @@
     }
 
     .cta-button {
-        background-color: #FF9999;
+        background-color: rgb(172, 158, 127);
         color: white;
         padding: 10px 20px;
         border-radius: 5px;
@@ -53,7 +53,7 @@
     }
 
     .cta-button:hover {
-        background-color: #FF6666;
+        background-color: #4c3414;
     }
 
     @media (max-width: 480px) {
