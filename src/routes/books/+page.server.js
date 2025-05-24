@@ -3,7 +3,7 @@ import dbModule from '$lib/db';
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
     try {
-        const db = await dbModule.init();
+        const db = dbModule; // Use default export directly
         const books = await db.prepare('SELECT * FROM books').all();
         console.log('Fetched books:', books);
         const validBooks = Array.isArray(books) ? books.filter(book => book && book.title) : [];
