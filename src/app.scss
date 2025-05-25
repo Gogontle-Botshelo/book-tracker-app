@@ -16,22 +16,22 @@ body {
 }
 
 .header {
-  background-color: #ac9e7f; /* Deep teal */
+  background-color: #ac9e7f; 
   color: white;
-  padding: 10px 30px; /* Increased padding for more space inside */
+  padding: 10px 30px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border: 2px solid #817158; /* Full border around the header */
-  border-radius: 0; /* Rounded corners on all sides */
+  border: 2px solid #817158;
+  border-radius: 0; 
   position: sticky;
   top: 0;
   z-index: 100;
-  margin-bottom: 20px; /* Add space below the header to separate it from content */
+  margin-bottom: 20px; 
 }
 
 .header a {
   color: white;
-  margin: 0 25px; /* Increased spacing between links */
+  margin: 0 25px; 
   text-decoration: none;
   font-weight: 500;
 }
@@ -117,36 +117,34 @@ button:hover {
   width: 100%;
 }
 
-/* Add this at the bottom of app.scss */
 .search-result {
-  display: block; /* Ensure buttons are stacked vertically */
-  margin: 10px 0; /* Add 10px top and bottom margin for spacing between buttons */
-  padding: 12px 15px; /* Increase padding for a larger, more clickable area */
-  background-color: #f8f9fa; /* Light gray background for contrast */
-  color: #333; /* Dark text for readability */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 5px; /* Slightly rounded corners */
+  display: block; 
+  margin: 10px 0;
+  padding: 12px 15px; 
+  background-color: #f8f9fa; 
+  color: #333; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
   cursor: pointer;
   transition: background-color 0.2s ease;
-  width: 100%; /* Ensure buttons take full width */
-  text-align: left; /* Align text to the left for better readability */
-}
+  width: 100%;
+  text-align: left; 
 
 .search-result:hover {
-  background-color: #e9ecef; /* Slightly darker on hover */
+  background-color: #e9ecef; 
 }
 
 .search-result .title {
-  font-weight: bold; /* Make the title stand out */
+  font-weight: bold;
 }
 
 .search-result .author {
-  color: #555; /* Slightly lighter text for the author */
+  color: #555; 
 }
 
 .search-result .release-date {
-  font-size: 0.9em; /* Smaller text */
-  color: #777; /* Even lighter text for the date */
-  font-style: italic; /* Italicize the date */
-  margin-left: 5px; /* Add a little space before the date */
+  font-size: 0.9em; 
+  color: #777; 
+  font-style: italic; 
+  margin-left: 5px; 
 }
